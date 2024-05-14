@@ -372,6 +372,65 @@ body {
     border: none;
 }
 
+.block-section {
+    margin-top: 30px;
+}
+
+.block-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap:25px;
+    margin-top:80px;
+    justify-content: center;
+}
+
+.block {
+    width: 285px; 
+    height: 360px;
+    margin-bottom: 10px; 
+    background-color: #FAFAFA;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.block-image {
+    width: 60px;
+    height: auto;
+}
+
+.block-text {
+    font-size: 22px;
+    color: #222222;
+    margin-top: 10px;
+}
+
+.block:hover .block-image {
+    opacity: 0;
+}
+
+.block:hover {
+    background-color: #15263E;
+}
+
+.block:hover .block-text {
+    color: #FFFFFF;
+    margin-top: -10px;
+}
+
+.block:hover::after {
+    content: "Lorem ipsum dolor amet, consectetur adipiscing elit. Sunt sed ad possimus magni maiores. Ipsa dolor.";
+    font-size: 14px;
+    color: #ECECEC;
+    margin-top: 10px;
+    width:222px;
+    height:70px;
+    padding: 10px;
+    line-height: 1.5;
+    text-align: center;
+}
+
 @media (max-width: 768px) {
     .first-page,
     .second-page {
@@ -489,4 +548,4 @@ body {
         padding: 40px 20px;
         margin-top: 50px;
     }
-}
+}  
