@@ -61,3 +61,50 @@ fillProgressBars();
 
 
 
+
+let currentSlide = 0;
+
+const changeSlide = (index) => {
+    
+    const squares = document.querySelectorAll('.square');
+    
+    squares.forEach(square => {
+        square.classList.remove('active');
+    });
+    
+    squares[index - 1].classList.add('active');
+
+    const dImage = document.querySelector('.d3-image');
+    const roleText = document.querySelector('.role');
+    const nameText = document.querySelector('.name');
+
+    switch (index) {
+        case 1:
+            dImage.src = "assets/images/d3.svg";
+            roleText.textContent = "Graphic Designer";
+            nameText.textContent = "Mau Thomas";
+            break;
+        case 2:
+            dImage.src = "assets/images/d4.svg";
+            roleText.textContent = "Illustrator";
+            nameText.textContent = "Mark Hill";
+            break;
+        case 3:
+            dImage.src = "assets/images/d5.svg";
+            roleText.textContent = "Photographer";
+            nameText.textContent = "Nick Williams";
+            break;
+        default:
+            break;
+    }
+};
+
+const autoChangeSlide = () => {
+    setInterval(() => {
+        currentSlide = (currentSlide % 3) + 1; 
+        changeSlide(currentSlide); 
+    }, 5000); 
+};
+
+
+autoChangeSlide();
