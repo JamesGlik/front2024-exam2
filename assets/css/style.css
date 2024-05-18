@@ -15,6 +15,10 @@ body {
     
 }
 
+.heads-containers {
+    width: 100%;
+    max-width: 1390px;
+}
 
 .first-page {
     height: 1072px;
