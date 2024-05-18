@@ -56,12 +56,6 @@ window.addEventListener('scroll', fillProgressBars);
 
 fillProgressBars();
 
-
-
-
-
-
-
 let currentSlide = 0;
 
 const changeSlide = (index) => {
@@ -108,3 +102,150 @@ const autoChangeSlide = () => {
 
 
 autoChangeSlide();
+
+document.querySelectorAll('.vertical-text p').forEach(item => {
+    item.addEventListener('mouseover', event => {
+        const text = event.target.innerText;
+        const images = document.querySelectorAll('.project-image img');
+        
+        
+        images.forEach(image => {
+            image.style.filter = '';
+        });
+        
+        
+        if (text === 'All') {
+            images.forEach(image => {
+                image.style.filter = 'brightness(50%)';
+            });
+        } else {
+            const index = Array.from(item.parentNode.children).indexOf(item) - 1; 
+            if (images[index]) {
+                images[index].style.filter = 'brightness(50%)';
+            }
+        }
+    });
+
+    item.addEventListener('mouseleave', event => {
+        const images = document.querySelectorAll('.project-image img');
+        images.forEach(image => {
+            image.style.filter = '';
+        });
+    });
+
+    item.addEventListener('click', event => {
+        const text = event.target.innerText;
+        const images = document.querySelectorAll('.project-image img');
+        
+        
+        images.forEach(image => {
+            image.style.display = 'block';
+            image.style.filter = ''; 
+        });
+        
+        
+        switch (text) {
+            case 'All':
+                
+                images.forEach(image => {
+                    image.style.display = 'inline-block';
+                });
+                break;
+            case 'Work ideas':
+                
+                for (let i = 1; i < images.length; i++) {
+                    images[i].style.display = 'none';
+                }
+                break;
+            case 'Mockup':
+                
+                for (let i = 0; i < images.length; i++) {
+                    if (i !== 1) {
+                        images[i].style.display = 'none';
+                    }
+                }
+                break;
+            case 'PSD Design':
+                
+                for (let i = 0; i < images.length; i++) {
+                    if (i !== 2) {
+                        images[i].style.display = 'none';
+                    }
+                }
+                break;
+            case 'Logo':
+                
+                for (let i = 0; i < images.length; i++) {
+                    if (i !== 3) {
+                        images[i].style.display = 'none';
+                    }
+                }
+                break;
+            case 'Presentation':
+                
+                for (let i = 0; i < images.length; i++) {
+                    if (i !== 4) {
+                        images[i].style.display = 'none';
+                    }
+                }
+                break;
+            case 'Icons':
+                
+                for (let i = 0; i < images.length; i++) {
+                    if (i !== 5) {
+                        images[i].style.display = 'none';
+                    }
+                }
+                break;
+            
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+
+    contactForm.addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        
+        const formData = new FormData(contactForm);
+        const formParams = new URLSearchParams(formData);
+
+        fetch('https://borjomi.loremipsum.ge/api/send-message', {
+            method: 'POST',
+            body: formParams
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 1) {
+                alert('Thank you for getting in touch! We appreciate you contacting us.');
+            } else {
+                alert('There was an error sending your message. Please try again later.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('There was an error sending your message. Please try again later.');
+        });
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
