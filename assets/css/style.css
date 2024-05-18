@@ -12,16 +12,14 @@ body {
 .head-container {
     width: 100%;
     max-width: 1690px;
-    
+    margin: 0 auto;
 }
 
 .head-container2 {
     width: 100%;
     max-width: 1390px;
-    
+    margin: 0 auto;
 }
-
-
 
 .first-page {
     height: 1072px;
