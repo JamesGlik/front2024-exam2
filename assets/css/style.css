@@ -21,6 +21,11 @@ body {
     
 }
 
+.head-container3{
+    width: 100%;
+    max-width: 1590px;
+}
+
 .first-page {
     height: 1072px;
     background-color: #DDDDDD;
