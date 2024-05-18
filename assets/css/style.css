@@ -16,6 +16,13 @@ body {
     padding: 20px;
 }
 
+.head-containers {
+    width: 100%;
+    max-width: 1490px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 .first-page {
     height: 1072px;
     background-color: #DDDDDD;
