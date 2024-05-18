@@ -13,12 +13,14 @@ body {
     width: 100%;
     max-width: 1690px;
     margin: 0 auto;
+    padding: 20px;
 }
 
 .head-container2 {
     width: 100%;
     max-width: 1390px;
     margin: 0 auto;
+    padding: 20px;
 }
 
 .first-page {
