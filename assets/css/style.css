@@ -17,7 +17,8 @@ body {
 
 .heads-containers {
     width: 100%;
-    max-width: 1290px;
+    max-width: 1460px;
+    margin:0 auto;
 }
 
 .first-page {
